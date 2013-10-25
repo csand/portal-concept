@@ -26,8 +26,8 @@ module.exports = function(grunt) {
         files: {
           'public/': [
             'index.html',
-            'img/*',
-            'css/*'
+            'img/**/*',
+            'css/**/*.css'
           ]
         }
       }
@@ -41,6 +41,10 @@ module.exports = function(grunt) {
       uglify: {
         files: uglifyFiles,
         tasks: ['uglify:dev']
+      },
+      stylus: {
+        files: ['css/**/*.styl'],
+        tasks: ['stylus:dev']
       }
     },
     uglify: {
@@ -73,6 +77,21 @@ module.exports = function(grunt) {
           'public/js/lib/ember-data.js': 'js/lib/ember-data.js'
         }
       }
+    },
+    stylus: {
+      dev: {
+        options: {
+          compress: false
+        },
+        files: {
+          'css/style.css': ['css/**/*.styl']
+        }
+      },
+      build: {
+        files: {
+          'public/css/style.css': ['css/**/*.styl']
+        }
+      }
     }
   };
 
@@ -82,6 +101,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-ember-templates');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
 
   grunt.registerTask('build', ['emberTemplates:compile', 'uglify:build', 'copy:build']);
 };
