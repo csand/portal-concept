@@ -1,4 +1,56 @@
+bg-color = #E5E5E5
+split-left = #4A4A4A
+split-right = #222
+
 #main
-  box-sizing: border-box
-  height: 100%
-  background-color: #D5D5D5
+  flex: 1 1 auto
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  background-color: bg-color
+  border-left: 4px solid black
+
+  #toolbar
+    flex: 0 0 auto
+    height: 2.8em
+    background-color: #4A4A4A
+    background-image: radial-gradient(top, #5A5A5A, #1D1D1D)
+    border-bottom: 1px solid black
+    display: flex
+    color: #CCC
+    align-items: stretch
+
+    .toolbar-item-container
+      flex 1 1 auto
+      display: flex
+
+      ul
+        flex: 0 0 auto
+        border-left: 1px solid split-right
+        border-right: 1px solid split-left
+        margin: 0
+        margin-left: 50px
+        display: flex
+        align-items: stretch
+
+      li
+        flex: 0 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        list-style-type: none
+        padding: 15px
+        border-left: 1px solid split-left
+        border-right: 1px solid split-right
+
+    .searchbox-container
+      display: flex
+      align-items: center
+
+      #searchbox
+        margin: 0 1.0em
+        border-radius: 15px
+        font-size: 0.8em
+
+  #content
+    flex: 1 1 auto

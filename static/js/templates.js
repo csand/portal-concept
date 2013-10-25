@@ -37,11 +37,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   hashContexts = {};
   options = {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.partial || depth0.partial),stack1 ? stack1.call(depth0, "_nav", options) : helperMissing.call(depth0, "partial", "_nav", options))));
-  data.buffer.push("\n</section>\n<section id=\"main\">\n  ");
+  data.buffer.push("\n</section>\n<section id=\"main\">\n  <section id=\"toolbar\">\n    <!-- ");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.outlet || depth0.outlet),stack1 ? stack1.call(depth0, "toolbar", options) : helperMissing.call(depth0, "outlet", "toolbar", options))));
+  data.buffer.push(" -->\n    <div class=\"toolbar-item-container\">\n      <ul>\n        <li>Toolbar Item #1</li>\n        <li>Toolbar Item #2</li>\n      </ul>\n    </div>\n    <div class=\"searchbox-container\">\n      <input type=\"text\" id=\"searchbox\"></input>\n    </div>\n  </section>\n  <section id=\"content\">\n    ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n</section>\n");
+  data.buffer.push("\n  </section>\n</section>\n");
   return buffer;
   
 });

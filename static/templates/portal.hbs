@@ -5,5 +5,19 @@
   {{partial _nav}}
 </section>
 <section id="main">
-  {{outlet}}
+  <section id="toolbar">
+    <!-- {{outlet 'toolbar'}} -->
+    <div class="toolbar-item-container">
+      <ul>
+        <li>Toolbar Item #1</li>
+        <li>Toolbar Item #2</li>
+      </ul>
+    </div>
+    <div class="searchbox-container">
+      <input type="text" id="searchbox"></input>
+    </div>
+  </section>
+  <section id="content">
+    {{outlet}}
+  </section>
 </section>

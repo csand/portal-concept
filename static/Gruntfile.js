@@ -81,13 +81,19 @@ module.exports = function(grunt) {
     stylus: {
       dev: {
         options: {
-          compress: false
+          compress: false,
+          use: [require('fluidity')],
+          'import': ['fluidity']
         },
         files: {
           'css/style.css': ['css/**/*.styl']
         }
       },
       build: {
+        options: {
+          use: [require('fluidity')],
+          'import': ['fluidity']
+        },
         files: {
           'public/css/style.css': ['css/**/*.styl']
         }
