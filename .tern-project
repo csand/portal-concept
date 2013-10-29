@@ -1,0 +1,10 @@
+{
+    "libs": [
+        "jquery",
+        "browser"
+    ],
+    "loadEagerly": [
+        "./static/js/lib/*.js",
+        "./static/js/templates.js"
+    ]
+}
